@@ -5,7 +5,6 @@ import os
 fnCascade = 'haarcascade_frontalface_alt2.xml'
 tlabURL = 'https://www-tlab.math.ryukoku.ac.jp/~takataka/course/AProg/'
 
-
 class FaceDetector():
 
     def __init__(self):
