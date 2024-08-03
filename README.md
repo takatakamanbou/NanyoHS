@@ -1,6 +1,9 @@
 # 20240803-nanyo
 
+[takataka のページ](https://www-tlab.math.ryukoku.ac.jp/wiki/)
+
 2024年8月3日の実習で使用したファイルたちです．
+
 
 ## 環境の構築
 
