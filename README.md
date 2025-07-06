@@ -1,8 +1,8 @@
-# 20240803-nanyo
+# README
 
 [takataka のページ](https://www-tlab.math.ryukoku.ac.jp/wiki/)
 
-2024年8月3日の実習で使用したファイルたちです．
+2025年8月2日の実習で使用する予定のファイルたちです．
 
 
 ## 環境の構築
