@@ -1,25 +1,17 @@
 import cv2
-from urllib import request
-import os
+from pathlib import Path
 
-fnCascade = 'haarcascade_frontalface_alt2.xml'
-tlabURL = 'https://www-tlab.math.ryukoku.ac.jp/~takataka/course/AProg/'
+fnCascade = Path(cv2.data.haarcascades) / 'haarcascade_frontalface_alt2.xml'
 
 class FaceDetector():
 
     def __init__(self):
 
-        ### 顔検出器の学習済みパラメータを入手する
-        #
-        if not os.path.exists(fnCascade):
-            url = tlabURL + fnCascade         
-            print(f'# downloading {url}', end='')
-            request.urlretrieve(url, fnCascade)
-            print('done')
-            print('# The license for this file is stated at the beginning of the file.')
-
         # 顔検出器の初期化
-        self.classifier = cv2.CascadeClassifier(fnCascade)
+        self.classifier = cv2.CascadeClassifier(str(fnCascade))
+
+        if self.classifier.empty():
+            raise RuntimeError(f'顔検出器を読み込めませんでした: {fnCascade}')
 
 
     def detect(self, image):
@@ -44,5 +36,4 @@ class FaceDetector():
 if __name__ == '__main__':
 
     fd = FaceDetector()
-
 
